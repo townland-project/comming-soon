@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+
+    overflow: hidden;
+
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+section {
+    position: fixed;
+
+    inset: 0 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(20px);
+
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+    user-select: none;
+
+    transition: all 0.5s;
+}
+
+section h1 {
+    font-size: clamp(3em, 20vw, 8em);
+
+    color: rgba(0, 0, 0, 0.6);
+
+    margin: 0;
+}
+
+section p {
+    font-size: clamp(1.4em, 10vw, 3em);
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+section div.timer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    transition: all 0.5s;
+}
+
+section div.timer div.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 20px;
+}
+
+section div.timer div.column span.value {
+    font-size: 2em;
+
+    color: #6ab04c;
+}
+
+section div.timer div.column span.title {
+    font-size: 0.9em;
+    font-weight: bold;
+
+    color: rgba(0, 0, 0, 0.5);
+}
+
+section div.footer {
+    position: absolute;
+
+    bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: all 0.5s;
+}
+
+section div.footer div.links {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+section div.footer a {
+    cursor: pointer;
+
+    width: 20px;
+    height: 20px;
+
+    margin: 5px 7px;
+
+    background-image: var(--image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    border-radius: 50%;
+
+    opacity: 0.7;
+
+    transition: all 0.3s;
+}
+
+section div.footer a:hover {
+    opacity: 1;
+
+    transform: scale(1.2);
+}
+
+section div.footer span.name {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+section div.footer span.love {
+    color: #e84118;
+    font-weight: bold;
+}
+
+div#background {
+    position: fixed;
+
+    inset: 0 0 0 0;
+
+    z-index: 1;
+}
+
+div#background div.image {
+    width: var(--s);
+    height: var(--s);
+
+    position: absolute;
+
+    top: var(--t);
+    left: var(--l);
+
+    opacity: 0;
+
+    animation: falling var(--sp) linear forwards;
+
+    background-image: url("https://avatars.githubusercontent.com/u/96562526?v=4");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
