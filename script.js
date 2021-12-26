@@ -4,7 +4,7 @@ const Minute = document.getElementById('minute')
 const Second = document.getElementById('second')
 const Background = document.getElementById('background')
 const Count = 50
-const DeadLine = new Date('2022/01/05 00:00')
+const DeadLine = new Date('2022/01/23 00:00')
 const Now = new Date()
 
 function Random(min, max) {
